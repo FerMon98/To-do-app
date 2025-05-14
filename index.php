@@ -10,7 +10,7 @@
     $sqlSelectAll->execute();
     $resultado = $sqlSelectAll->fetchAll();
 
-    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['titleInput'], $_GET['taskDescriptionInput'], $_GET['statusSelect'], $_GET['dueDateInput'])) {
+    if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['titleInput'], $_GET['taskDescriptionInput'], $_GET['statusSelect'], $_GET['dueDateInput'])) {
         $task_name = $_GET['titleInput'];
         $task_description = $_GET['taskDescriptionInput'];
         $initialState = $_GET['statusSelect'];
